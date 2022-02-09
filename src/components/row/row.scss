@@ -1,0 +1,10 @@
+.row {
+	position: relative;
+	display: grid;
+	width: 100%;
+	align-items: center;
+	border-bottom: 1px solid #cecece;
+	&:last-child {
+		border-bottom: none;
+	}
+}

@@ -1,0 +1,47 @@
+.popup-button {
+	box-sizing: border-box;
+	display: block;
+	padding: 0;
+	flex-shrink: 0;
+	border: none;
+	cursor: pointer;
+	background-color: transparent;
+	z-index: 5;
+	opacity: 0.5;
+	&-open {
+		width: 25px;
+		height: 25px;
+	}
+	&-close {
+		position: relative;
+		width: 20px;
+		height: 20px;
+		border: 1px solid red;
+		border-radius: 50%;
+		&:before,
+		&:after {
+			content: '';
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 80%;
+			height: 2px;
+			background-color: red;
+		}
+		&:before {
+			transform: translate(-50%, -50%) rotate(45deg);
+		}
+		&:after {
+			transform: translate(-50%, -50%) rotate(-45deg);
+		}
+	}
+	&-delete {
+		@extend .popup-button-close;
+		border: none;
+		border-radius: 0;
+	}
+	&:focus,
+	&:hover {
+		opacity: 1;
+	}
+}
