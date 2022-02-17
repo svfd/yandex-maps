@@ -10,7 +10,7 @@ type Props = {
 
 const writeCoords = (evt: MouseEvent | TouchEvent, object: {x: number, y: number}) => {
 
-	if (evt instanceof TouchEvent) {
+	if (window.TouchEvent && evt instanceof TouchEvent) {
 		object.x = evt.touches[0].pageX;
 		object.y = evt.touches[0].pageY;
 	} else if (evt instanceof MouseEvent) {
